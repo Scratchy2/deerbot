@@ -53,3 +53,4 @@ def onopenexec(ws: WebSocketApp):
 ws = WebSocketApp("wss://sokt.meltland.dev", on_message=onmessage, on_open=onopenexec)
 while True:
 	ws.run_forever()
+	ws.close()
