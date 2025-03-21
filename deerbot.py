@@ -50,7 +50,7 @@ def onopen(ws: WebSocketApp):
 def onopenexec(ws: WebSocketApp):
 	Thread(target=lambda: onopen(ws), daemon=True).start()
 
-ws = WebSocketApp("wss://sokt.meltland.dev", on_message=onmessage, on_open=onopenexec)
+ws = WebSocketApp("wss://sokt.fraudulent.loan", on_message=onmessage, on_open=onopenexec)
 while True:
 	ws.run_forever()
 	ws.close()
