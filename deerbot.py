@@ -44,7 +44,7 @@ def onmessage(ws: WebSocketApp, message):
 			print(f"Message from {incoming["data"]["author"]["display_name"]} (@{incoming["data"]["author"]["username"]}): {incoming["data"]["content"]}")
 def onopen(ws: WebSocketApp):
 	global bot, psw
-	ws.send(dumps({"command": "login_pswd", "username": bot, "password": psw}))
+	ws.send(dumps({"command": "login_pswd", "username": bot, "password": psw, listener: "RegisterLoginPswdListener"}))
 	ping(ws)
 
 def onopenexec(ws: WebSocketApp):
